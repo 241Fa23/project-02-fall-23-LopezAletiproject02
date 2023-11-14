@@ -10,25 +10,24 @@ package project02startingfiles;
  */
 public class Knight extends Player {
 
-    public Knight(int healthIn, int scoreIn) {
-        super(healthIn, scoreIn);
-    }
+    private String specialMove;
 
-    public String getSpecialMove() {
-        return "slash";
-    }
-
-    public String getHealth() {
-        return super healthIn;
-    }
-
-    public void useSpecialMove() {
-
+    public Knight(int health, int score) {
+        super(health, score);
     }
 
     @Override
+    public String getSpecialMove() {
+        return "Slash with Sword";
+    }
 
+    @Override
+    public void useSpecialMove() {
+        System.out.println("The knight slashes with the sword!");
+    }
+
+    @Override
     public String toString() {
-        return "Knight: " + "\nHealth: " + healthIn;
+        return "Knight Status:\nHealth: " + getHealth() + "\nScore: " + getScore() + "\nThe Knight Special move is " + specialMove;
     }
 }
