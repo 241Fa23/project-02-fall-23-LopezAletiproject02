@@ -18,31 +18,26 @@ public abstract class Player {
         score = 0;
     }
 
-    public Player(int health, int score) {
-        this.health = health;
-        this.score = score;
-    }
-
     public int getHealth() {
         return health;
-    }
-
-    public void setHealth(int health) {
-        this.health = health;
     }
 
     public int getScore() {
         return score;
     }
 
-    public void setScore(int score) {
-        this.score = score;
+    public void setHealth(int healthIn) {
+        this.health = healthIn;
+    }
+
+    public void setScore(int scoreIn) {
+        this.score = scoreIn;
     }
 
     public abstract String getSpecialMove();
 
     public abstract void useSpecialMove();
 
+    @Override
     public abstract String toString();
-
 }

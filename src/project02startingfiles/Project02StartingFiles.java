@@ -28,28 +28,23 @@ public class Project02StartingFiles {
         System.out.println("(k)Knight || (h)Healer || (w)Wizard || (t)Thief");
         System.out.println("");
         cChoice = input.nextLine();
-
-        if (cChoice.equals("k")) {
-            System.out.println("\nWelcome, Knight");
-
+        Player player;
+        switch (cChoice) {
+            case "k":
+                player = new Knight();
+                break;
+            case "h":
+                player = new Healer();
+            case "w":
+                player = new Wizard();
+            case "t":
+                player = new Thief();
+                break;
+            default:
+                System.out.println("Invalid choice. Exiting the game");
+                return;
         }
-        if (cChoice.equals("h")) {
-            System.out.println("\nWelcome, Healer");
+        System.out.println(player);
 
-        }
-        if (cChoice.equals("w")) {
-            System.out.println("\nWelcome, Wizard");
-
-        }
-        if (cChoice.equals("t")) {
-            System.out.println("\nWelcome, Thief");
-
-        }
-
-        Knight p1 = new Knight(100, 1);
-
-        String specialMove = p1.getSpecialMove();
-        System.out.println(specialMove);
     }
-
 }

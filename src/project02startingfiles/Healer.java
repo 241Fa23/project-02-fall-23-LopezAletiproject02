@@ -12,8 +12,8 @@ public class Healer extends Player {
 
     private String specialMove;
 
-    public Healer(int health, int score) {
-        super(health, score);
+    public Healer() {
+
     }
 
     @Override
@@ -28,7 +28,7 @@ public class Healer extends Player {
 
     @Override
     public String toString() {
-        return "Healer Status:\nHealth: " + getHealth() + "\nScore: " + getScore() + "\nThe Healer's Special move is " + specialMove;
+        return "Healer Status:\nHealth: " + getHealth() + "\nScore: " + getScore() + "\nThe Healer's Special move is " + getSpecialMove();
     }
 
 }

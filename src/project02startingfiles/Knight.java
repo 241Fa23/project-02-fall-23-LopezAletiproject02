@@ -12,8 +12,8 @@ public class Knight extends Player {
 
     private String specialMove;
 
-    public Knight(int health, int score) {
-        super(health, score);
+    public Knight() {
+
     }
 
     @Override
@@ -28,6 +28,6 @@ public class Knight extends Player {
 
     @Override
     public String toString() {
-        return "Knight Status:\nHealth: " + getHealth() + "\nScore: " + getScore() + "\nThe Knight Special move is " + specialMove;
+        return "Knight Status:\nHealth: " + getHealth() + "\nScore: " + getScore() + "\nThe Knight Special move is " + getSpecialMove();
     }
 }

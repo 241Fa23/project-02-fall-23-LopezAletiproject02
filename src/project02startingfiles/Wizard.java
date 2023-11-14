@@ -12,8 +12,8 @@ public class Wizard extends Player {
 
     private String specialMove;
 
-    public Wizard(int health, int score) {
-        super(health, score);
+    public Wizard() {
+
     }
 
     @Override
@@ -28,7 +28,7 @@ public class Wizard extends Player {
 
     @Override
     public String toString() {
-        return "Wizard Status:\nHealth: " + getHealth() + "\nScore: " + getScore() + "\nThe Wizard's Special move is " + specialMove;
+        return "Wizard Status:\nHealth: " + getHealth() + "\nScore: " + getScore() + "\nThe Wizard's Special move is " + getSpecialMove();
     }
 
 }
