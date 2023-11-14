@@ -23,7 +23,7 @@ public class Healer extends Player {
 
     @Override
     public void useSpecialMove() {
-        System.out.println("The healer slashes with the sword!");
+        System.out.println("The healer uses sleeping powder!");
     }
 
     @Override
