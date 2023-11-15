@@ -59,13 +59,19 @@ public class Project02StartingFiles {
         int randomEvent = random.nextInt(5);
 
         if (randomEvent == 0) {
-            System.out.println("Nice trees around");
+            System.out.println("Nice trees around..");
             player.setScore(player.getScore() + 1);
         } else if (randomEvent == 1) {
-            System.out.println("Potty break");
+            System.out.println("Potty break..");
             player.setScore(player.getScore() + 1);
         } else if (randomEvent == 2) {
-
+            attack(player, random);
+        } else if (randomEvent == 3) {
+            System.out.println("Inserting cottage there...");
+            player.setScore(player.getScore() + 1);
+        } else {
+            System.out.println("Nothing there...");
+            player.setScore(player.getScore() + 1);
         }
     }
 
