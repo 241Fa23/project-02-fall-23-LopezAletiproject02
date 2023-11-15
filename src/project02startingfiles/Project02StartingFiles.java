@@ -48,12 +48,18 @@ public class Project02StartingFiles {
         System.out.println("What would you like to do?");
         System.out.println("{?}Status Report || {n}{s}{e}{w} move one space north, south, east, or west || {q} quit");
         cChoice = input.nextLine();
-        while (cChoice != "q") {
-            if (cChoice == "?") {
-                System.out.println(player);
+        do {
+            while (cChoice != "q") {
+                if (cChoice == "?") {
+                    System.out.println(player);
+                } else if (cChoice == "n" || cChoice == "s" || cChoice == "e" || cChoice == "w") {
+                    move(player, rand);
+                } else {
+                    System.out.println(player);
+                    System.out.println("Thanks for playing Java Quest!");
+                }
             }
         }
-    }
 
     private static void move(Player player, Random random) {
         int randomEvent = random.nextInt(5);
