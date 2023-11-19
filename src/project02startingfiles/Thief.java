@@ -18,17 +18,17 @@ public class Thief extends Player {
 
     @Override
     public String getSpecialMove() {
-        return "Sneak by";
+        return "'Sneak by'";
     }
 
     @Override
     public void useSpecialMove() {
-        System.out.println("The thief sneaks by!");
+        System.out.println("The Thief sneaks by!");
     }
 
     @Override
     public String toString() {
-        return "Thief Status:\nHealth: " + getHealth() + "\nScore: " + getScore() + "\nThe Theif's Special move is " + getSpecialMove();
+        return "Thief Status:\nHealth: " + getHealth() + "\nScore: " + getScore() + "\nThe Thief's special move is " + getSpecialMove();
 
     }
 }

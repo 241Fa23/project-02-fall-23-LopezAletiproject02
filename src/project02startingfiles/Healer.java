@@ -18,7 +18,7 @@ public class Healer extends Player {
 
     @Override
     public String getSpecialMove() {
-        return "Slash with Sword";
+        return "'Sleeping Powder'";
     }
 
     @Override
@@ -28,7 +28,7 @@ public class Healer extends Player {
 
     @Override
     public String toString() {
-        return "Healer Status:\nHealth: " + getHealth() + "\nScore: " + getScore() + "\nThe Healer's Special move is " + getSpecialMove();
+        return "Healer Status:\nHealth: " + getHealth() + "\nScore: " + getScore() + "\nThe Healer's special move is " + getSpecialMove();
     }
 
 }
