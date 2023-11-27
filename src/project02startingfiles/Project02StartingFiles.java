@@ -49,17 +49,17 @@ public class Project02StartingFiles {
         System.out.println("{?}Status Report || {n}{s}{e}{w} move one space north, south, east, or west || {q} quit");
         cChoice = input.nextLine();
         do {
-            while (cChoice != "q") {
-                if (cChoice == "?") {
-                    System.out.println(player);
-                } else if (cChoice == "n" || cChoice == "s" || cChoice == "e" || cChoice == "w") {
-                    move(player, rand);
-                } else {
-                    System.out.println(player);
-                    System.out.println("Thanks for playing Java Quest!");
-                }
+
+            if (cChoice == "?") {
+                System.out.println(player);
+            } else if (cChoice == "n" || cChoice == "s" || cChoice == "e" || cChoice == "w") {
+                move(player, rand);
+            } else {
+                System.out.println(player);
+                System.out.println("Thanks for playing Java Quest!");
             }
-        }
+        } while (cChoice != "q");
+    }
 
     private static void move(Player player, Random random) {
         int randomEvent = random.nextInt(5);
@@ -99,10 +99,27 @@ public class Project02StartingFiles {
         System.out.println("{s}Special Move || {r}Run!");
         choice = input.nextLine();
         if (choice == "s") {
-            System.out.println("Prepare for battle!");
-            System.out.println("Choose anyletter the ENTER to continue");
-            choice = input.nextLine();
-            if (chance == 0 || chance == 1 || chance == 2) {
+
+        }
+        if (choice == "r") {
+            System.out.println("You attempted to run away!");
+            if (run == 0) {
+                System.out.println("Succesful you got away! + 1 score");
+                player.setScore(player.getScore() + 1);
+
+            } else if (run == 1) {
+                System.out.println("You were not succesful");
+            }
+
+        }
+
+    }
+
+}
+private static void battle(Player player, Random random){
+        int chance = random.nextInt(5);
+        
+        if (chance == 0 || chance == 1 || chance == 2) {
                 player.useSpecialMove();
                 System.out.println("Player wins increase score by 2");
                 player.setScore(player.getScore() + 2);
@@ -115,20 +132,7 @@ public class Project02StartingFiles {
                 System.out.println(player);
 
             }
-            if (choice == "r") {
-                System.out.println("You attempted to run away!");
-                if (run == 0) {
-                    System.out.println("Succesful you got away! + 1 score");
-                    player.setScore(player.getScore() + 1);
-
-                } else if (run == 1) {
-                    System.out.println("You were not succesful");
-                }
-
-            }
-
-        }
-
+        
     }
 
 }
