@@ -53,6 +53,7 @@ public class Project02StartingFiles {
         System.out.println("What would you like to do?");
         System.out.println("{?}Status Report || {n}{s}{e}{w} move 1 space North, South, East, or West || {q} Quit");
         cChoice = input.nextLine();
+        System.out.println("");
 
         while (!"q".equals(cChoice)) {
 
@@ -161,10 +162,8 @@ public class Project02StartingFiles {
     }
 
 }
-}
 
-
-    private static void battle(Player player, Random random) {
+private static void battle(Player player, Random random) {
         Scanner input = new Scanner(System.in);
         int randBattle = random.nextInt(10);
         System.out.println("Prepare for battle!");
