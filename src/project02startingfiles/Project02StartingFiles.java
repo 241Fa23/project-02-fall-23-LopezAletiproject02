@@ -27,28 +27,34 @@ public class Project02StartingFiles {
 
         System.out.println("\nChoose a character...");
         System.out.println("(k)Knight || (h)Healer || (w)Wizard || (t)Thief");
-        System.out.println("");
         cChoice = input.nextLine();
         Player player;
         switch (cChoice) {
             case "k":
                 player = new Knight();
+                System.out.println("\nWelcome, Knight!\n");
                 break;
             case "h":
                 player = new Healer();
+                System.out.println("\nWelcome, Healer!\n");
+                break;
             case "w":
                 player = new Wizard();
+                System.out.println("\nWelcome, Wizard!\n");
+                break;
             case "t":
                 player = new Thief();
+                System.out.println("\nWelcome, Thief!\n");
                 break;
             default:
                 System.out.println("Invalid choice. Exiting the game");
                 return;
         }
         System.out.println("What would you like to do?");
-        System.out.println("{?}Status Report || {n}{s}{e}{w} move one space north, south, east, or west || {q} quit");
+        System.out.println("{?}Status Report || {n}{s}{e}{w} move 1 space North, South, East, or West || {q} Quit");
         cChoice = input.nextLine();
-        do {
+
+        while (!"q".equals(cChoice)) {
 
             if (cChoice == "?") {
                 System.out.println(player);
@@ -58,26 +64,29 @@ public class Project02StartingFiles {
                 System.out.println(player);
                 System.out.println("Thanks for playing Java Quest!");
             }
-        } while (cChoice != "q");
+            System.out.println("What would you like to do?");
+            System.out.println("{?}Status Report || {n}{s}{e}{w} move 1 space North, South, East, or West || {q} Quit");
+            cChoice = input.nextLine();
+
+        }
+        System.out.println("*******************************************");
+        System.out.println("*******************************************");
+        System.out.println("The game has come to an end! Your final stats:");
+        System.out.println("\n" + player.toString());
+        System.out.println("Thanks for playing!");
+
     }
 
     private static void move(Player player, Random random) {
         int randomEvent = random.nextInt(5);
 
         if (randomEvent == 0) {
-            System.out.println("Nice trees around..");
-            player.setScore(player.getScore() + 1);
-        } else if (randomEvent == 1) {
-            System.out.println("Potty break..");
-            player.setScore(player.getScore() + 1);
-        } else if (randomEvent == 2) {
-            attack(player, random);
-        } else if (randomEvent == 3) {
-            System.out.println("Inserting cottage there...");
+            System.out.println("**********************");
+            System.out.println(getRandomScene());
+            System.out.println("**********************");
             player.setScore(player.getScore() + 1);
         } else {
-            System.out.println("Nothing there...");
-            player.setScore(player.getScore() + 1);
+            attack(player, random);
         }
     }
 
@@ -98,41 +107,89 @@ public class Project02StartingFiles {
         System.out.println("How would you like to handle this?");
         System.out.println("{s}Special Move || {r}Run!");
         choice = input.nextLine();
+         << << << < HEAD
         if (choice == "s") {
 
         }
         if (choice == "r") {
-            System.out.println("You attempted to run away!");
-            if (run == 0) {
-                System.out.println("Succesful you got away! + 1 score");
-                player.setScore(player.getScore() + 1);
+             == == == =
+            if ("s".equals(choice)) {
+                battle(player, random);
+            } else if ("r".equals(choice)) {
+                 >>> >>> > 7f
+                2427c5d46969124ca3d0520991e9c89c81a013 System
+                .out.println("You attempted to run away!");
+                if (run == 0) {
+                    System.out.println("Succesful you got away! + 1 score");
+                    player.setScore(player.getScore() + 1);
+                     << << << < HEAD
 
-            } else if (run == 1) {
-                System.out.println("You were not succesful");
+                } else if (run == 1) {
+                    System.out.println("You were not succesful");
+                }
+
             }
 
         }
 
     }
 
-}
-private static void battle(Player player, Random random){
+    private static void battle(Player player, Random random) {
         int chance = random.nextInt(5);
-        
+
         if (chance == 0 || chance == 1 || chance == 2) {
-                player.useSpecialMove();
-                System.out.println("Player wins increase score by 2");
-                player.setScore(player.getScore() + 2);
-                System.out.println(player);
+            player.useSpecialMove();
+            System.out.println("Player wins increase score by 2");
+            player.setScore(player.getScore() + 2);
+            System.out.println(player);
 
-            } else {
-                player.useSpecialMove();
-                System.out.println("You missed... 1 health point deducted");
-                player.setHealth(player.getHealth() - 1);
-                System.out.println(player);
+        } else {
+            player.useSpecialMove();
+            System.out.println("You missed... 1 health point deducted");
+            player.setHealth(player.getHealth() - 1);
+            System.out.println(player);
 
-            }
-        
+        }
+
+    }
+    else if (run
+
+    
+        == 1) {
+                System.out.println("You were not succesful");
+        battle(player, random);
+    }
+
+}
+}
+
+
+    private static void battle(Player player, Random random) {
+        Scanner input = new Scanner(System.in);
+        int randBattle = random.nextInt(10);
+        System.out.println("Prepare for battle!");
+        System.out.println("Choose anyletter then ENTER to continue");
+        input.nextLine();
+        System.out.println("**********************");
+        if (randBattle < 6) {
+            player.useSpecialMove();
+            System.out.println("Player wins! Increase score by 2 points!");
+            player.setScore(player.getScore() + 2);
+            System.out.println("\n" + player.toString());
+            System.out.println();
+        } else {
+            player.useSpecialMove();
+            System.out.println("Oh no! Attacked Missed! Lose 1 health!");
+            player.setHealth(player.getHealth() - 1);
+            System.out.println("\n" + player.toString());
+            System.out.println();
+        }
+    }
+
+    private static String getRandomScene() {
+        String[] scenes = {"Nothing here...", "Nice trees around here...", "Interesting cottage there...", "Potty break..."};
+        return scenes[new Random().nextInt(scenes.length)];
+
     }
 
 }

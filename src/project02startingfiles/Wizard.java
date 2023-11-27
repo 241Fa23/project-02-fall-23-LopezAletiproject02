@@ -18,7 +18,7 @@ public class Wizard extends Player {
 
     @Override
     public String getSpecialMove() {
-        return "Cast a Spell";
+        return "'Cast a Spell'";
     }
 
     @Override
@@ -28,7 +28,7 @@ public class Wizard extends Player {
 
     @Override
     public String toString() {
-        return "Wizard Status:\nHealth: " + getHealth() + "\nScore: " + getScore() + "\nThe Wizard's Special move is " + getSpecialMove();
+        return "Wizard Status:\nHealth: " + getHealth() + "\nScore: " + getScore() + "\nThe Wizard's special move is " + getSpecialMove();
     }
 
 }
